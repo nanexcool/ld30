@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LD30", "LD30\LD30\LD30.csproj", "{D3830F12-371F-45DF-A865-174B9BD4A262}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "LD30Content", "LD30\LD30Content\LD30Content.contentproj", "{3AB2B48B-84D6-40C0-A971-7F676B0D3F4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3830F12-371F-45DF-A865-174B9BD4A262}.Debug|x86.ActiveCfg = Debug|x86
+		{D3830F12-371F-45DF-A865-174B9BD4A262}.Debug|x86.Build.0 = Debug|x86
+		{D3830F12-371F-45DF-A865-174B9BD4A262}.Release|x86.ActiveCfg = Release|x86
+		{D3830F12-371F-45DF-A865-174B9BD4A262}.Release|x86.Build.0 = Release|x86
+		{3AB2B48B-84D6-40C0-A971-7F676B0D3F4A}.Debug|x86.ActiveCfg = Debug|x86
+		{3AB2B48B-84D6-40C0-A971-7F676B0D3F4A}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
