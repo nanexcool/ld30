@@ -18,11 +18,20 @@ namespace LD30
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        ScreenManager screenManager;
+        Input input;
+        Resolution res;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            graphics.PreferredBackBufferWidth = 960;
+            graphics.PreferredBackBufferHeight = 540;
+
+            Window.AllowUserResizing = true;
+            IsMouseVisible = true;
         }
 
         /// <summary>
@@ -33,7 +42,13 @@ namespace LD30
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            res = new Resolution(480, 270, this);
+
+            Util.Initialize(this);
+
+            input = new Input();
+
+            screenManager = new ScreenManager(new TitleScreen());
 
             base.Initialize();
         }
@@ -46,6 +61,8 @@ namespace LD30
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            Util.SB = spriteBatch;
 
             // TODO: use this.Content to load your game content here
         }
@@ -66,11 +83,9 @@ namespace LD30
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
+            Time.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
-            // TODO: Add your update logic here
+            screenManager.Update();
 
             base.Update(gameTime);
         }
@@ -81,9 +96,17 @@ namespace LD30
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            res.Setup();
 
-            // TODO: Add your drawing code here
+            // Do all the drawing
+
+            Util.SB.Begin();
+
+            screenManager.Draw();
+
+            Util.SB.End();
+
+            res.Draw(Util.SB);
 
             base.Draw(gameTime);
         }
