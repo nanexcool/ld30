@@ -33,8 +33,7 @@ namespace LD30
 
             if (input.AnyKeyPressed() && delay < 1)
             {
-                CharacterSelectScreen screen = new CharacterSelectScreen();
-                ScreenManager.SetScreen(screen);
+                ScreenManager.SetScreen(new WarningScreen());
             }
 
             if (!finished)

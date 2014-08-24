@@ -84,6 +84,7 @@
     <Compile Include="Time.cs" />
     <Compile Include="TitleScreen.cs" />
     <Compile Include="Util.cs" />
+    <Compile Include="WarningScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

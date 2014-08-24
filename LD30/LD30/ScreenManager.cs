@@ -12,12 +12,14 @@ namespace LD30
         Screen currentScreen;
         Screen nextScreen;
 
-        public ScreenManager(Screen screen)
+
+
+        public ScreenManager(Screen screen, float fade = 0)
         {
-            SetScreen(screen);
+            SetScreen(screen, fade);
         }
 
-        public void SetScreen(Screen screen)
+        public void SetScreen(Screen screen, float fade = 0)
         {
             currentScreen = screen;
             screen.ScreenManager = this;
